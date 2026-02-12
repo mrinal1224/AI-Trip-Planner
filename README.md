@@ -1,16 +1,55 @@
-# React + Vite
+# AI Trip Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A teaching project for building an AI-powered trip planning app with React, Tailwind, Firebase, and Gemini.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** + **Vite**
+- **Tailwind CSS v4**
+- **Firebase** (Auth, Firestore)
+- **React Router**
+- **Gemini API** (coming in Phase 3)
 
-## React Compiler
+## Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Install dependencies
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. Firebase configuration
+
+1. Create a project at [Firebase Console](https://console.firebase.google.com)
+2. Enable **Authentication** → Email/Password sign-in
+3. Go to Project Settings → General → Your apps → Add web app
+4. Copy the config values and create a `.env` file:
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` and add your Firebase credentials:
+
+```
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+### 3. Run the app
+
+```bash
+npm run dev
+```
+
+## Project Phases
+
+- **Phase 1** ✅ — Foundation (setup, layout, routing, landing page)
+- **Phase 2** ✅ — Firebase Auth (login, signup, protected routes)
+- **Phase 3** — AI Itinerary Generator (Gemini)
+- **Phase 4** — Save trips to Firestore
+- **Phase 5** — Polish & extras
